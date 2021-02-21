@@ -1,19 +1,19 @@
 package dataClasses;
 
-public class TriPair<U, T, R> {
+public class Triple<U, T, R> {
 
   public final U first;
   public final T second;
   public final R third;
 
-  TriPair(U first, T second, R third) {
+  Triple(U first, T second, R third) {
     this.first = first;
     this.second = second;
     this.third = third;
   }
 
-  public static <U, T, R> TriPair pair(U first, T second, R third) {
-    return new TriPair(first, second, third);
+  public static <U, T, R> Triple of(U first, T second, R third) {
+    return new Triple(first, second, third);
   }
 
   @Override
@@ -23,12 +23,12 @@ public class TriPair<U, T, R> {
 
   @Override
   public boolean equals(Object object) {
-    if (!(object instanceof TriPair)) {
+    if (!(object instanceof Triple)) {
       return false;
     } else if (object == this) {
       return true;
     }
-    TriPair<U, T, R> other = (TriPair<U, T, R>) object;
+    Triple<U, T, R> other = (Triple<U, T, R>) object;
     return first.equals(other.first) && second.equals(other.second) && third.equals(other.third);
   }
 
