@@ -1,6 +1,7 @@
 package io;
 
 import dataClasses.in.InStructure;
+import dataClasses.in.TrafficLight;
 
 import javax.swing.filechooser.FileSystemView;
 import java.io.*;
@@ -42,7 +43,27 @@ public class Parser {
     return list;
   }
 
-  public static InStructure parser() {
+  public static InStructure parser(List<String> raw) {
+    var fstLine = raw.get(0).split(" ");
+    var timeLength = Integer.valueOf(fstLine[0]);
+    var interNo = Integer.valueOf(fstLine[1]);
+    var stNo = Integer.valueOf(fstLine[2]);
+    var carNo =  Integer.valueOf(fstLine[3]);
+    var bonus = Integer.valueOf(fstLine[4]);
+    TrafficLight[] trafficLights = new TrafficLight[interNo];
+
+    for (int i = 1; i < raw.size(); i++) {
+      var line = raw.get(i).split(" ");
+      var inter1 = trafficLights[Integer.parseInt(line[0])];
+      var inter2 = trafficLights[Integer.parseInt(line[1])];
+      var street = line[2];
+      var weight = Integer.parseInt(line[3]);
+      inter1.streets.add(street);
+      inter1.durations.add(0);
+      inter2.streets.add(street);
+      inter2.durations.add(0);
+    }
+
     return null;
   }
 
