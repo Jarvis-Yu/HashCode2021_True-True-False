@@ -46,8 +46,9 @@ public class Street {
 
   // 将第一个正在路口等的车开出去
   public void nextCarLeave(int currentTime) {
-    Car car = queueCars.poll();
-    if (car != null) {
+
+    if (!queueCars.isEmpty()) {
+      Car car = queueCars.poll();
       car.moveToNextStreet(currentTime);
     }
   };

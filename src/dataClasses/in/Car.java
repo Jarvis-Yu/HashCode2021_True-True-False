@@ -1,9 +1,6 @@
 package dataClasses.in;
 
-import java.util.ArrayDeque;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class Car {
   public Queue<Street> currentAndRemainingStreets = new ArrayDeque<>();
@@ -20,14 +17,15 @@ public class Car {
   }
 
   public int remainingLength() {
-    return  pathLength - index;
+    return pathLength - index;
   }
 
-  public void moveToNextStreet (int currentTime){
+  public void moveToNextStreet(int currentTime) {
     currentAndRemainingStreets.poll();
-    if (currentAndRemainingStreets.isEmpty()) {
-      inStructure.point += inStructure.bonusPointPerCar  + (inStructure.simulationLength - currentTime);
-    } else {
+    if (currentAndRemainingStreets.isEmpty()) { // 如果true, 加分
+      inStructure.point +=
+          inStructure.bonusPointPerCar + (inStructure.simulationLength - currentTime);
+    } else { // 把车放到下一个street
       Street nextStreet = currentAndRemainingStreets.peek();
       nextStreet.addCarToStart(this, currentTime);
     }
@@ -35,10 +33,17 @@ public class Car {
 
   @Override
   public String toString() {
-    return "Car{" +
-        "streets=" + currentAndRemainingStreets +
-        ", index=" + index +
-        ", pathLength=" + pathLength +
-        '}';
+    List<String> s = new ArrayList<>();
+    for (Street currentAndRemainingStreet : currentAndRemainingStreets) {
+      s.add(currentAndRemainingStreet.getStreetName());
+    }
+    return "Car{"
+        + "streets="
+        + s
+        + ", index="
+        + index
+        + ", pathLength="
+        + pathLength
+        + '}';
   }
 }
