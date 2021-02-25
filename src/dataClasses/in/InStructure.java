@@ -30,11 +30,11 @@ public class InStructure {
     StringBuilder s = new StringBuilder();
     s.append(String.format("%n%nIntersections: %n"));
     for (Intersection intersection : intersections) {
-      s.append(String.format("%s%n", intersection));
+      s.append(String.format("%s%n%n", intersection));
     }
     s.append(String.format("%n%nStreets: %n"));
     for (Street street : streetMap.values()) {
-      s.append(String.format("%s%n", street));
+      s.append(String.format("%s%n%n", street));
     }
     return s.toString();
   }
