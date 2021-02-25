@@ -9,10 +9,10 @@ public class Street {
   public Queue<Pair<Car, Integer>> drivingCar;
   public Queue<Car> queueCars;
   public final int drivingTime;
-  public final TrafficLight startIntersection;
-  public final TrafficLight finalIntersection;
+  public final Intersection startIntersection;
+  public final Intersection finalIntersection;
 
-  public Street(TrafficLight startIntersection, TrafficLight finalIntersection, Integer drivingTime) {
+  public Street(Intersection startIntersection, Intersection finalIntersection, Integer drivingTime) {
     this.startIntersection = startIntersection;
     this.finalIntersection = finalIntersection;
     this.drivingTime = drivingTime;
