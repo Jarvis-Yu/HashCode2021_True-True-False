@@ -6,6 +6,7 @@ import java.util.Map;
 public class InStructure {
 
   public Map<String, Street> steetMap = new HashMap<>();
+  public
 
   public void addStreet(Street street) {};
 }
