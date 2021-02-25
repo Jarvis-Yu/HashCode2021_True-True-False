@@ -20,12 +20,12 @@ public class Car {
     return  pathLength - index;
   }
 
-//  public void moveToNextStreet (){
-//    // TODO: move out of original street
-//    index += 1;
-//    if (index < pathLength) {
-//      inStructure.steetMap.get(streets[index]).addCar(this);
-//    }
-//  }
+  public void moveToNextStreet (){
+    // TODO: move out of original street
+    index += 1;
+    if (index < pathLength) {
+      inStructure.streetMap.get(streets[index]).addCar(this);
+    }
+  }
 
 }
