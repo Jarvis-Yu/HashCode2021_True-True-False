@@ -12,7 +12,7 @@ public class Triple<U, T, R> {
     this.third = third;
   }
 
-  public static <U, T, R> Triple of(U first, T second, R third) {
+  public static <U, T, R> Triple<U, T, R> of(U first, T second, R third) {
     return new Triple(first, second, third);
   }
 
