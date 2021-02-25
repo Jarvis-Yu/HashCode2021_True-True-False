@@ -8,7 +8,7 @@ public class Street {
 
   public Queue<Pair<Car, Integer>> drivingCar;
   public Queue<Car> queueCars;
-  public final Integer drivingTime;
+  public final int drivingTime;
   public final TrafficLight startIntersection;
   public final TrafficLight finalIntersection;
 
@@ -18,7 +18,9 @@ public class Street {
     this.drivingTime = drivingTime;
   }
 
-  public void simulate() {}
+  // 模拟
+  public void simulate(int currentTime) {}
 
+  // 把传进来的车放到路口（先进先出）
   public void addCar(Car car) {};
 }
