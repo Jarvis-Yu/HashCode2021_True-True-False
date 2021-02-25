@@ -81,7 +81,7 @@ public class Parser {
       //inter1.streets.add(street);
       //inter1.durations.add(0);
       inter2.streets.add(street);
-      inter2.durations.add(0);
+      inter2.durations.add(1);
 //      matrix[Integer.parseInt(line[0])][Integer.parseInt(line[1])] = weight;
       // ins.addIntersection(inter1);
       // ins.addIntersection(inter2);
