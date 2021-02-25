@@ -10,18 +10,11 @@ public class Street {
   public Queue<Pair<Car, Integer>> drivingCar;
   public Queue<Car> queueCars;
   public final int drivingTime;
-<<<<<<< HEAD
   public final int startIntersection;
   public final int finalIntersection;
 
   public Street(String streetName, int startIntersection, int finalIntersection, Integer drivingTime) {
     this.streetName = streetName;
-=======
-  public final Intersection startIntersection;
-  public final Intersection finalIntersection;
-
-  public Street(Intersection startIntersection, Intersection finalIntersection, Integer drivingTime) {
->>>>>>> 7ca6579c4ed9f33a0c1cdac68d2a56f950d4fb72
     this.startIntersection = startIntersection;
     this.finalIntersection = finalIntersection;
     this.drivingTime = drivingTime;
