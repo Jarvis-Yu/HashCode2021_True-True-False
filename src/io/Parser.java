@@ -2,10 +2,7 @@ package io;
 
 import dataClasses.in.InStructure;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,5 +37,30 @@ public class Parser {
 
   public static InStructure parser() {
     return null;
+  }
+
+  public static void writeFile(String filePath, List<String> data) {
+    File file = new File(filePath);
+    try {
+      file.createNewFile();
+      if (file.exists()) {
+        FileWriter fw = new FileWriter(file);
+        data.forEach(
+            line -> {
+              try {
+                fw.write(line);
+                fw.write("\n");
+              } catch (IOException e) {
+                System.out.println("创建文件出错");
+                e.printStackTrace();
+              }
+            }
+        );
+        fw.close();
+      }
+      } catch (Exception e) {
+      System.out.println("创建文件出错");
+      e.printStackTrace();
+    }
   }
 }
