@@ -11,14 +11,14 @@ public class Intersection {
 	public List<Integer> durations = new ArrayList<>();
 	public InStructure ins;
 
-	public boolean isUnchanged(){
-		return this.streets.isEmpty() && this.durations.isEmpty();
-	}
-
 	public Intersection(List<String> streets, List<Integer> durations, InStructure ins) {
 		this.streets = streets;
 		this.durations = durations;
 		this.ins = ins;
+	}
+
+	public boolean isUnchanged() {
+		return this.streets.isEmpty() && this.durations.isEmpty();
 	}
 
 	@Override
@@ -29,11 +29,11 @@ public class Intersection {
 				'}';
 	}
 
-	public int numOfScheduledStreets(){
+	public int numOfScheduledStreets() {
 		return streets.size();
 	}
 
-		public void simulate(int time) {
+	public void simulate(int time) {
 		var mod = time % round();
 		int i = 0;
 		while (true) {
