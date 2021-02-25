@@ -31,11 +31,14 @@ public class Street {
 
   // 把传进来的车放到路口（先进先出）
   public void addCar(Car car) {
-
+    queueCars.add(car);
   }
 
   // 将第一个正在路口等的车开出去
-  public void nextCarLeave() {};
+  public void nextCarLeave() {
+    Car car = queueCars.poll();
+    Street nextStreet = car.streets
+  };
 
   @Override
   public String toString() {
