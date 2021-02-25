@@ -19,4 +19,6 @@ public class InStructure {
   public void addIntersection (Intersection intersection) {
     intersections.add(intersection);
   };
+
+  public String toString() { return null };
 }

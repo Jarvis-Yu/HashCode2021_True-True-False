@@ -29,4 +29,7 @@ public class Street {
 
   // 把传进来的车放到路口（先进先出）
   public void addCar(Car car) {};
+
+  //
+  public void nextCarLeave() {};
 }
