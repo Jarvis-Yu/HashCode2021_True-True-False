@@ -52,10 +52,10 @@ public class Parser {
   public static InStructure parser(List<String> raw) {
     var fstLine = raw.get(0).split(" ");
     var timeLength = Integer.valueOf(fstLine[0]);
-    var interNo = Integer.valueOf(fstLine[1]);
-    var stNo = Integer.valueOf(fstLine[2]);
-    var carNo =  Integer.valueOf(fstLine[3]);
-    var bonus = Integer.valueOf(fstLine[4]);
+    var interNo = Integer.parseInt(fstLine[1]);
+    var stNo = Integer.parseInt(fstLine[2]);
+    var carNo =  Integer.parseInt(fstLine[3]);
+    var bonus = Integer.parseInt(fstLine[4]);
 
     InStructure ins = new InStructure();
     Intersection[] intersections = new Intersection[interNo];
