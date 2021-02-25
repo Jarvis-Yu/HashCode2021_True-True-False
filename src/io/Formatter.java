@@ -13,10 +13,10 @@ public class Formatter {
   public static void formatter(List<Intersection> listOfIntersection, String filePath) {
     StringBuilder stringBuilder = new StringBuilder();
     stringBuilder.append(numOfScheduledIntersections(listOfIntersection));
-    stringBuilder.append("/n");
+    stringBuilder.append("\n");
     for (Intersection intersection : listOfIntersection) {
       stringBuilder.append(numOfChanged(intersection));
-      stringBuilder.append("/n");
+      stringBuilder.append("\n");
       List<Integer> durations = intersection.durations;
       List<String> streets = intersection.streets;
       for (int i = 0; i < durations.size(); i++) {
@@ -24,7 +24,7 @@ public class Formatter {
           stringBuilder.append(streets.get(i));
           stringBuilder.append(" ");
           stringBuilder.append(durations.get(i));
-          stringBuilder.append("/n");
+          stringBuilder.append("\n");
         }
       }
     }

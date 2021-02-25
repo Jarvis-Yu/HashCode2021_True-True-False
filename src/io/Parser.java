@@ -28,7 +28,9 @@ public class Parser {
 //    List<String> res = new ArrayList<>(List.of("abc", "def"));
 //    var homeDir = FileSystemView.getFileSystemView().getHomeDirectory().getAbsolutePath();
 //    writeFile(homeDir + "/Desktop/foo.txt", res);
-    System.out.println(getA());
+  var res = getA();
+  Formatter.formatter(res.intersections, "/Users/crait/Desktop/foo.txt");
+
   }
 
   public static List<String> readFile(String filePath) {
