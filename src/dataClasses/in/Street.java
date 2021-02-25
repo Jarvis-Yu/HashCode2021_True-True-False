@@ -17,4 +17,8 @@ public class Street {
     this.finalIntersection = finalIntersection;
     this.drivingTime = drivingTime;
   }
+
+  public void simulate() {}
+
+  public void addCar(Car car) {};
 }
