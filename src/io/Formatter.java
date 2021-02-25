@@ -11,10 +11,14 @@ import java.util.List;
 public class Formatter {
 
   public static void formatter(List<Intersection> listOfIntersection, String filePath) {
+    Intersection intersection;
     StringBuilder stringBuilder = new StringBuilder();
     stringBuilder.append(numOfScheduledIntersections(listOfIntersection));
     stringBuilder.append("\n");
-    for (Intersection intersection : listOfIntersection) {
+    for (int i = 0; i < listOfIntersection.size(); i++) {
+      stringBuilder.append(i);
+      stringBuilder.append("\n");
+      intersection = listOfIntersection.get(i);
       stringBuilder.append(numOfChanged(intersection));
       stringBuilder.append("\n");
       List<Integer> durations = intersection.durations;

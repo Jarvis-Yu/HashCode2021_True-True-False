@@ -2,25 +2,33 @@ package algorithms.tony;
 
 import dataClasses.in.*;
 
+import java.util.List;
+
 public class SimulateAnnealling {
 
-  public static Solution update(Solution current){
-
+  private static int randInt(int min, int max){
+    double x = (Math.random()*((max-min)))+min;
+    return (int) x;
   }
 
-  public static int[] algo(InStructure structure){
+  public static List<Intersection> algo(InStructure structure){
     double T = 100;
     double T_min = 10;
     double r = 0.9999;
-    int[] current = initialize(structure);
-    int[] next;
+    List<Intersection> current;
+    List<Intersection> next;
     int dE;
     int count = 0;
 
     while(T > T_min){
-      next = update(structure, current);
+      current = structure.getIntersectionsSafe();
 
-      dE = objectiveFunction(structure, next) - objectiveFunction(structure, current);
+      int currentScore = objectiveFunction(structure);
+      next = update(current);
+      structure.setIntersections(next);
+      int nextScore = objectiveFuntion(structure);
+
+      dE = nextScore - currentScore;
 
       if (dE >= 0){
         current = next;
@@ -39,5 +47,18 @@ public class SimulateAnnealling {
 
     System.out.println(count);
     return current;
+  }
+
+
+
+  public static List<Intersection> update(List<Intersection> intersections){
+    int indexOfChange = randInt(0, intersections.size());
+    Intersection target = intersections.get(indexOfChange);
+    List<Integer> durations = target.durations;
+    int range = 3;
+    for (int i = 0; i < durations.size(); i++) {
+      durations.set(i, randInt(0,range));
+    }
+    return intersections;
   }
 }
