@@ -1,4 +1,3 @@
-# This is a repository for nothing
-It doesn't contain any code related to google hashcode competition.
+# Contribute Specifications
 
-Hi there!
+Collaborators should be editing in their own package when developing algorithms.
