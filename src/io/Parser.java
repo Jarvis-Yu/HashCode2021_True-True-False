@@ -67,7 +67,7 @@ public class Parser {
     ins.intersections = Arrays.asList(intersections);
 
     for (int i = 0; i < intersections.length; i++) {
-      intersections[i] = new Intersection(new ArrayList<>(), new ArrayList<>());
+      intersections[i] = new Intersection(new ArrayList<>(), new ArrayList<>(), ins);
     }
 
     for (int i = 1; i <= stNo; i++) {
