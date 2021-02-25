@@ -1,4 +1,4 @@
-package algorithms;
+package algorithms.jarvis;
 
 public class HelloWorld {
 
