@@ -31,9 +31,8 @@ public class Street {
   public void addCar(Car car) {}
   ;
 
-  //
-  public void nextCarLeave() {}
-  ;
+  // 将第一个正在路口等的车开出去
+  public void nextCarLeave() {};
 
   @Override
   public String toString() {
