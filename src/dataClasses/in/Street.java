@@ -6,13 +6,15 @@ import java.util.Queue;
 
 public class Street {
 
+  public final String streetName;
   public Queue<Pair<Car, Integer>> drivingCar;
   public Queue<Car> queueCars;
   public final int drivingTime;
-  public final TrafficLight startIntersection;
-  public final TrafficLight finalIntersection;
+  public final int startIntersection;
+  public final int finalIntersection;
 
-  public Street(TrafficLight startIntersection, TrafficLight finalIntersection, Integer drivingTime) {
+  public Street(String streetName, int startIntersection, int finalIntersection, Integer drivingTime) {
+    this.streetName = streetName;
     this.startIntersection = startIntersection;
     this.finalIntersection = finalIntersection;
     this.drivingTime = drivingTime;
