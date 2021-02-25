@@ -20,9 +20,16 @@ public class Street {
     this.drivingTime = drivingTime;
   }
 
+  public String getStreetName() {
+    return streetName;
+  }
+
   // 模拟
   public void simulate(int currentTime) {}
 
   // 把传进来的车放到路口（先进先出）
   public void addCar(Car car) {};
+
+  //
+  public void nextCarLeave() {};
 }

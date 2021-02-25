@@ -6,6 +6,7 @@ public class SimulateAnnealling {
 
   public static InStructure initialize(){
 
+
   }
 
   public static Solution update(Solution current){
