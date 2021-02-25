@@ -19,17 +19,17 @@ public class Parser {
   public static InStructure getA(){
     return parser(readFile("data/in/a.txt"));
   }
-  public static InStructure getB(){return null;}
-  public static InStructure getC(){return null;}
-  public static InStructure getD(){return null;}
-  public static InStructure getE(){return null;}
+  public static InStructure getB(){return parser(readFile("data/in/b.txt"));}
+  public static InStructure getC(){return parser(readFile("data/in/c.txt"));}
+  public static InStructure getD(){return parser(readFile("data/in/d.txt"));}
+  public static InStructure getE(){return parser(readFile("data/in/e.txt"));}
 
   public static void main(String[] args) {
 //    List<String> res = new ArrayList<>(List.of("abc", "def"));
 //    var homeDir = FileSystemView.getFileSystemView().getHomeDirectory().getAbsolutePath();
 //    writeFile(homeDir + "/Desktop/foo.txt", res);
-  var res = getA();
-  Formatter.formatter(res.intersections, "/Users/crait/Desktop/foo.txt");
+    var res = getB();
+    Formatter.formatter(res.intersections, "/Users/crait/Desktop/foo.txt");
 
   }
 
