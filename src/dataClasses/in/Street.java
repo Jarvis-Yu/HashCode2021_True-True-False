@@ -2,6 +2,7 @@ package dataClasses.in;
 
 import dataClasses.Pair;
 
+import java.util.List;
 import java.util.Queue;
 
 public class Street {
@@ -28,8 +29,9 @@ public class Street {
   public void simulate(int currentTime) {}
 
   // 把传进来的车放到路口（先进先出）
-  public void addCar(Car car) {}
-  ;
+  public void addCar(Car car) {
+
+  }
 
   // 将第一个正在路口等的车开出去
   public void nextCarLeave() {};
