@@ -9,6 +9,10 @@ public class SimulateAnnealling {
 
   }
 
+  public static Solution update(Solution current){
+
+  }
+
   public static int[] algo(InStructure structure){
     double T = 100;
     double T_min = 10;

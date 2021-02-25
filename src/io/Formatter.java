@@ -6,11 +6,14 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
+import dataClasses.out.Solution;
 
 public class Formatter {
 
-  public static void formatter(Solution out) {
 
+  public static void formatter(Solution out) {
+    StringBuilder stringBuilder = new StringBuilder();
+    
   }
 
   public static void writeFile(String filePath, List<String> data) {
