@@ -23,11 +23,11 @@ public class Formatter {
       stringBuilder.append("\n");
       List<Integer> durations = intersection.durations;
       List<String> streets = intersection.streets;
-      for (int i = 0; i < durations.size(); i++) {
-        if (durations.get(i) != 0) {
-          stringBuilder.append(streets.get(i));
+      for (int j = 0; j < durations.size(); j++) {
+        if (durations.get(j) != 0) {
+          stringBuilder.append(streets.get(j));
           stringBuilder.append(" ");
-          stringBuilder.append(durations.get(i));
+          stringBuilder.append(durations.get(j));
           stringBuilder.append("\n");
         }
       }
