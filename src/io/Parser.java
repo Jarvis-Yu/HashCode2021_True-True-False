@@ -1,11 +1,13 @@
 package io;
 
+import dataClasses.in.Car;
 import dataClasses.in.InStructure;
+import dataClasses.in.Street;
 import dataClasses.in.Intersection;
-
 import javax.swing.filechooser.FileSystemView;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Parser {
@@ -50,9 +52,11 @@ public class Parser {
     var stNo = Integer.valueOf(fstLine[2]);
     var carNo =  Integer.valueOf(fstLine[3]);
     var bonus = Integer.valueOf(fstLine[4]);
+//    Integer[][] matrix = new Integer[interNo][interNo];
+    InStructure ins = new InStructure();
     Intersection[] intersections = new Intersection[interNo];
 
-    for (int i = 1; i < raw.size(); i++) {
+    for (int i = 1; i <= stNo; i++) {
       var line = raw.get(i).split(" ");
       var inter1 = intersections[Integer.parseInt(line[0])];
       var inter2 = intersections[Integer.parseInt(line[1])];
@@ -62,6 +66,17 @@ public class Parser {
       inter1.durations.add(0);
       inter2.streets.add(street);
       inter2.durations.add(0);
+//      matrix[Integer.parseInt(line[0])][Integer.parseInt(line[1])] = weight;
+      ins.addIntersection(inter1);
+      ins.addIntersection(inter2);
+      ins.addStreet(new Street(street, Integer.parseInt(line[0]), Integer.parseInt(line[1]), weight));
+    }
+
+    for (int i = stNo + 1; i < raw.size(); i++) {
+      var line = raw.get(i).split(" ");
+      var stNoForCar = Integer.parseInt(line[0]);
+      var startStreetName = line[1];
+      ins.steetMap.get(startStreetName).addCar(new Car(Arrays.copyOfRange(line, 1, line.length), stNoForCar, ins));
     }
 
     return null;
@@ -85,7 +100,7 @@ public class Parser {
         );
         fw.close();
       }
-      } catch (Exception e) {
+    } catch (Exception e) {
       System.out.println("创建文件出错");
       e.printStackTrace();
     }
