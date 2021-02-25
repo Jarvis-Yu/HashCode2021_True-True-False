@@ -1,9 +1,6 @@
 package dataClasses.in;
 
-import java.util.ArrayDeque;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class Car {
   public Queue<Street> currentAndRemainingStreets = new ArrayDeque<>();
@@ -36,9 +33,13 @@ public class Car {
 
   @Override
   public String toString() {
+    List<String> s = new ArrayList<>();
+    for (Street currentAndRemainingStreet : currentAndRemainingStreets) {
+      s.add(currentAndRemainingStreet.getStreetName());
+    }
     return "Car{"
         + "streets="
-        + currentAndRemainingStreets
+        + s
         + ", index="
         + index
         + ", pathLength="
