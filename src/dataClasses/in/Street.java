@@ -20,6 +20,10 @@ public class Street {
     this.drivingTime = drivingTime;
   }
 
+  public String getStreetName() {
+    return streetName;
+  }
+
   // 模拟
   public void simulate(int currentTime) {}
 

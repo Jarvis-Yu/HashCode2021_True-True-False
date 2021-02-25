@@ -12,8 +12,8 @@ public class InStructure {
 
   public InStructure() {}
 
-  public void addStreet(String name, Street street) {
-    streetMap.put(name, street);
+  public void addStreet(Street street) {
+    streetMap.put(street.getStreetName(), street);
   };
 
   public void addIntersection (Intersection intersection) {
