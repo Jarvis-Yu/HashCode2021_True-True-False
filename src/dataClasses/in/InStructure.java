@@ -16,5 +16,7 @@ public class InStructure {
     streetMap.put(name, street);
   };
 
-  public void addIntersection (Intersection intersection) {};
+  public void addIntersection (Intersection intersection) {
+    intersections.add(intersection);
+  };
 }
