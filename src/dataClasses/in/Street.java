@@ -28,8 +28,27 @@ public class Street {
   public void simulate(int currentTime) {}
 
   // 把传进来的车放到路口（先进先出）
-  public void addCar(Car car) {};
+  public void addCar(Car car) {}
+  ;
 
   //
-  public void nextCarLeave() {};
+  public void nextCarLeave() {}
+  ;
+
+  @Override
+  public String toString() {
+    StringBuilder s = new StringBuilder();
+    s.append(String.format(
+        "%s : %s -> %s; length = %s",
+        streetName, startIntersection, finalIntersection, drivingTime));
+    s.append(String.format("%nWaiting Cars:"));
+    for (Car car : queueCars) {
+      s.append(String.format("%n%s", car));
+    }
+    s.append(String.format("%nDriving Cars:"));
+    for (Pair<Car, Integer> carIntegerPair : drivingCar) {
+      s.append(String.format("%n%s; Entered at %s", carIntegerPair.first, carIntegerPair.second));
+    }
+    return s.toString();
+  }
 }
