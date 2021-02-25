@@ -29,11 +29,12 @@ public class Street {
   // 模拟
   public void simulate(int currentTime) {}
 
-  // 把传进来的车放到路口（先进先出）
+  // 把传进来的车放到终点（先进先出）
   public void addCarToEnd(Car car) {
     queueCars.add(car);
   }
 
+  // 把车放到路的起点
   public void addCarToStart(Car car){
     drivingCar.add(new Pair<Car, Integer>(car, 0));
   }
@@ -42,7 +43,7 @@ public class Street {
   public void nextCarLeave() {
     Car car = queueCars.poll();
     Queue<Street> streets = car.currentAndRemainingStreets;
-    Street nextStreet = streets.poll()
+    Street nextStreet = streets.poll();
     nextStreet.addCarToStart(car);
   };
 
