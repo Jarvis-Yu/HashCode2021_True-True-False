@@ -5,22 +5,20 @@ import java.util.List;
 
 public class Intersection {
 
+	// 如果不对 intersection 不进行修改，那么就是两个空 list
+
 	public List<String> streets = new ArrayList<>();
 	public List<Integer> durations = new ArrayList<>();
 	public InStructure ins;
-
-	public boolean isUnchanged(){
-		boolean answer = true;
-		for (int d: durations){
-			answer = answer && (d == 0);
-		}
-		return answer;
-	}
 
 	public Intersection(List<String> streets, List<Integer> durations, InStructure ins) {
 		this.streets = streets;
 		this.durations = durations;
 		this.ins = ins;
+	}
+
+	public boolean isUnchanged() {
+		return this.streets.isEmpty() && this.durations.isEmpty();
 	}
 
 	@Override
@@ -31,11 +29,11 @@ public class Intersection {
 				'}';
 	}
 
-	public int numOfScheduledStreets(){
+	public int numOfScheduledStreets() {
 		return streets.size();
 	}
 
-		public void simulate(int time) {
+	public void simulate(int time) {
 		var mod = time % round();
 		int i = 0;
 		while (true) {
