@@ -56,9 +56,12 @@ public class Parser {
     var stNo = Integer.valueOf(fstLine[2]);
     var carNo =  Integer.valueOf(fstLine[3]);
     var bonus = Integer.valueOf(fstLine[4]);
-//    Integer[][] matrix = new Integer[interNo][interNo];
+
     InStructure ins = new InStructure();
     Intersection[] intersections = new Intersection[interNo];
+    ins.simulationLength = timeLength;
+    ins.bonusPointPerCar = bonus;
+    ins.intersections = Arrays.asList(intersections);
 
     for (int i = 1; i <= stNo; i++) {
       var line = raw.get(i).split(" ");
@@ -66,15 +69,15 @@ public class Parser {
       var inter2 = intersections[Integer.parseInt(line[1])];
       var street = line[2];
       var weight = Integer.parseInt(line[3]);
-      inter1 = new Intersection(new ArrayList<>(), new ArrayList<>());
-      inter2 = new Intersection(new ArrayList<>(), new ArrayList<>());
-      inter1.streets.add(street);
-      inter1.durations.add(0);
+      // inter1 = new Intersection(new ArrayList<>(), new ArrayList<>()); 如果每次都初始化的话
+      // inter2 = new Intersection(new ArrayList<>(), new ArrayList<>()); 记录的路就没了……？
+      //inter1.streets.add(street);
+      //inter1.durations.add(0);
       inter2.streets.add(street);
       inter2.durations.add(0);
 //      matrix[Integer.parseInt(line[0])][Integer.parseInt(line[1])] = weight;
-      ins.addIntersection(inter1);
-      ins.addIntersection(inter2);
+      // ins.addIntersection(inter1);
+      // ins.addIntersection(inter2);
       ins.addStreet(new Street(street, Integer.parseInt(line[0]), Integer.parseInt(line[1]), weight));
     }
 
