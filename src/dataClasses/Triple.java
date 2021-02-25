@@ -6,7 +6,7 @@ public class Triple<U, T, R> {
   public final T second;
   public final R third;
 
-  Triple(U first, T second, R third) {
+  public Triple(U first, T second, R third) {
     this.first = first;
     this.second = second;
     this.third = third;

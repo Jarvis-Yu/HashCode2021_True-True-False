@@ -5,7 +5,7 @@ public class Pair<U, T> {
   public final U first;
   public final T second;
 
-  Pair(U first, T second) {
+  public Pair(U first, T second) {
     this.first = first;
     this.second = second;
   }
