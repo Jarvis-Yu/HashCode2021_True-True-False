@@ -2,14 +2,15 @@ package dataClasses.in;
 
 import dataClasses.Pair;
 
+import java.util.ArrayDeque;
 import java.util.List;
 import java.util.Queue;
 
 public class Street {
 
   public final String streetName;
-  public Queue<Pair<Car, Integer>> drivingCar; // 正在开的车
-  public Queue<Car> queueCars; // 排队等的车
+  public Queue<Pair<Car, Integer>> drivingCar = new ArrayDeque<>(); // 正在开的车
+  public Queue<Car> queueCars = new ArrayDeque<>(); // 排队等的车
   public final int drivingTime; // 这条路开车通过需要的时间
   public final int startIntersection; // 开始的路口
   public final int finalIntersection; // 结束的路口
