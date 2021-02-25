@@ -7,10 +7,14 @@ import java.util.Map;
 
 public class InStructure {
 
-  public Map<String, Street> steetMap = new HashMap<>();
+  public Map<String, Street> streetMap = new HashMap<>();
   public List<Intersection> intersections = new ArrayList<>();
 
   public InStructure() {}
 
-  public void addStreet(Street street) {};
+  public void addStreet(String name, Street street) {
+    streetMap.put(name, street);
+  };
+
+  public void addIntersection (Intersection intersection) {};
 }

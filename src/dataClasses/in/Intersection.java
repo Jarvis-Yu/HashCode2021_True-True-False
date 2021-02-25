@@ -8,8 +8,8 @@ public class Intersection {
 	public List<String> streets = new ArrayList<>();
 	public List<Integer> durations = new ArrayList<>();
 
-	public Intersection() {
+	public Intersection(List<String> streets, List<Integer> durations) {
+		this.streets = streets;
+		this.durations = durations;
 	}
-
-	public void addStreet() {};
 }
