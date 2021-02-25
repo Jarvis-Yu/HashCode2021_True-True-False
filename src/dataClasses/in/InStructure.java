@@ -26,8 +26,16 @@ public class InStructure {
     intersections.add(intersection);
   };
 
-  // 我需要一个方法，来更新时间表
-  // 我需要获得 list of intersection 的引用
+  /** @return 返回值不会直接更改intersection*/
+  public List<Intersection> getIntersectionsSafe() {
+    List<Intersection> output = new ArrayList<>();
+    output.addAll(intersections);
+    return output;
+  }
+
+  public void setIntersections(List<Intersection> intersections) {
+    this.intersections = intersections;
+  }
 
   // 我需要另一个方法，获得分数
 

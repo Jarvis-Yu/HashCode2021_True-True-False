@@ -1,5 +1,6 @@
 package io;
 
+import dataClasses.in.Intersection;
 import dataClasses.out.Solution;
 
 import java.io.File;
@@ -11,9 +12,24 @@ import dataClasses.out.Solution;
 public class Formatter {
 
 
-  public static void formatter(Solution out) {
+  public static void formatter(List<Intersection> listOfIntersection) {
     StringBuilder stringBuilder = new StringBuilder();
-    
+    stringBuilder.append(numOfScheduledIntersections(listOfIntersection));
+    stringBuilder.append("/n");
+    for (Intersection intersection : listOfIntersection){
+      stringBuilder.append()
+    }
+  }
+
+  public static int numOfScheduledIntersections(List<Intersection> listOfIntersection){
+    int n = 0;
+    for (Intersection inter : listOfIntersection){
+      if (!inter.isUnchanged()) {
+        // 如果有变化
+        n += 1;
+      }
+    }
+    return n;
   }
 
   public static void writeFile(String filePath, List<String> data) {

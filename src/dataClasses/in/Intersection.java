@@ -12,7 +12,11 @@ public class Intersection {
 	public InStructure ins;
 
 	public boolean isUnchanged(){
-		return this.streets.isEmpty() && this.durations.isEmpty();
+		boolean answer = true;
+		for (int d: durations){
+			answer = answer && (d == 0);
+		}
+		return answer;
 	}
 
 	public Intersection(List<String> streets, List<Integer> durations, InStructure ins) {
