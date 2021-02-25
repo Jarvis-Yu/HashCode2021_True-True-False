@@ -10,8 +10,24 @@ public class Intersection {
 	public List<String> streets = new ArrayList<>();
 	public List<Integer> durations = new ArrayList<>();
 
+	public boolean isUnchanged(){
+		return this.streets.isEmpty() && this.durations.isEmpty();
+	}
+
 	public Intersection(List<String> streets, List<Integer> durations) {
 		this.streets = streets;
 		this.durations = durations;
+	}
+
+	@Override
+	public String toString() {
+		return "Intersection{" +
+				"streets=" + streets +
+				", durations=" + durations +
+				'}';
+	}
+
+	public int numOfScheduledStreets(){
+		return streets.size();
 	}
 }
