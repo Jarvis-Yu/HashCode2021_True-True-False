@@ -4,11 +4,6 @@ import dataClasses.in.*;
 
 public class SimulateAnnealling {
 
-  public static InStructure initialize(){
-
-
-  }
-
   public static Solution update(Solution current){
 
   }
@@ -29,7 +24,6 @@ public class SimulateAnnealling {
 
       if (dE >= 0){
         current = next;
-
       }else if (Math.exp(dE / T) > Math.random() ){
         current = next;
       }

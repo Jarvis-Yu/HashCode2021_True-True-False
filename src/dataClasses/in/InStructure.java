@@ -25,6 +25,11 @@ public class InStructure {
     intersections.add(intersection);
   };
 
+  // 我需要一个方法，来更新时间表
+  // 我需要获得 list of intersection 的引用
+
+  // 我需要另一个方法，获得分数
+
   @Override
   public String toString() {
     StringBuilder s = new StringBuilder();
