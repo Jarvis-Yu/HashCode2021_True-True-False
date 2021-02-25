@@ -35,16 +35,14 @@ public class Street {
   }
 
   // 把车放到路的起点
-  public void addCarToStart(Car car){
-    drivingCar.add(new Pair<Car, Integer>(car, 0));
+  public void addCarToStart(Car car, int currentTime){
+    drivingCar.add(new Pair<Car, Integer>(car, currentTime));
   }
 
   // 将第一个正在路口等的车开出去
-  public void nextCarLeave() {
+  public void nextCarLeave(int currentTime) {
     Car car = queueCars.poll();
-    Queue<Street> streets = car.currentAndRemainingStreets;
-    Street nextStreet = streets.poll();
-    nextStreet.addCarToStart(car);
+    car.moveToNextStreet(currentTime);
   };
 
   @Override

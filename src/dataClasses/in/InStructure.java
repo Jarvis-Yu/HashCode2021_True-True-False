@@ -16,10 +16,11 @@ public class InStructure {
 
   public int simulationLength; // # of seconds
   public int bonusPointPerCar; // # of points for each car reaching the goal
+  public int point = 0; // total points at the time
 
   public void addStreet(Street street) {
     streetMap.put(street.getStreetName(), street);
-  };
+  }
 
   public void addIntersection (Intersection intersection) {
     intersections.add(intersection);

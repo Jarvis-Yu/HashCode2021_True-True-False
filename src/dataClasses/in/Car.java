@@ -23,13 +23,15 @@ public class Car {
     return  pathLength - index;
   }
 
-//  public void moveToNextStreet (){
-//    // TODO: move out of original street
-//    index += 1;
-//    if (index < pathLength) {
-//      inStructure.streetMap.get(currentAndRemainingStreets[index]).addCar(this);
-//    }
-//  }
+  public void moveToNextStreet (int currentTime){
+    currentAndRemainingStreets.poll();
+    if (currentAndRemainingStreets.isEmpty()) {
+      inStructure.point += inStructure.bonusPointPerCar  + (inStructure.simulationLength - currentTime);
+    } else {
+      Street nextStreet = currentAndRemainingStreets.peek();
+      nextStreet.addCarToStart(this, currentTime);
+    }
+  }
 
   @Override
   public String toString() {
