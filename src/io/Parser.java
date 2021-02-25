@@ -63,9 +63,13 @@ public class Parser {
     ins.bonusPointPerCar = bonus;
     ins.intersections = Arrays.asList(intersections);
 
+    for (int i = 0; i < intersections.length; i++) {
+      intersections[i] = new Intersection(new ArrayList<>(), new ArrayList<>());
+    }
+
     for (int i = 1; i <= stNo; i++) {
       var line = raw.get(i).split(" ");
-      var inter1 = intersections[Integer.parseInt(line[0])];
+//      var inter1 = intersections[Integer.parseInt(line[0])];
       var inter2 = intersections[Integer.parseInt(line[1])];
       var street = line[2];
       var weight = Integer.parseInt(line[3]);
