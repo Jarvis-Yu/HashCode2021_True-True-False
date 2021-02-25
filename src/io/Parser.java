@@ -12,16 +12,20 @@ import java.util.List;
 
 public class Parser {
 
-  public static InStructure getA(){return null;}
+
+  public static InStructure getA(){
+    return parser(readFile("data/in/a.txt"));
+  }
   public static InStructure getB(){return null;}
   public static InStructure getC(){return null;}
   public static InStructure getD(){return null;}
   public static InStructure getE(){return null;}
 
   public static void main(String[] args) {
-    List<String> res = new ArrayList<>(List.of("abc", "def"));
-    var homeDir = FileSystemView.getFileSystemView().getHomeDirectory().getAbsolutePath();
-    writeFile(homeDir + "/Desktop/foo.txt", res);
+//    List<String> res = new ArrayList<>(List.of("abc", "def"));
+//    var homeDir = FileSystemView.getFileSystemView().getHomeDirectory().getAbsolutePath();
+//    writeFile(homeDir + "/Desktop/foo.txt", res);
+    System.out.println(getA());
   }
 
   public static List<String> readFile(String filePath) {
@@ -62,6 +66,8 @@ public class Parser {
       var inter2 = intersections[Integer.parseInt(line[1])];
       var street = line[2];
       var weight = Integer.parseInt(line[3]);
+      inter1 = new Intersection(new ArrayList<>(), new ArrayList<>());
+      inter2 = new Intersection(new ArrayList<>(), new ArrayList<>());
       inter1.streets.add(street);
       inter1.durations.add(0);
       inter2.streets.add(street);
@@ -79,7 +85,7 @@ public class Parser {
       ins.streetMap.get(startStreetName).addCar(new Car(Arrays.copyOfRange(line, 1, line.length), stNoForCar, ins));
     }
 
-    return null;
+    return ins;
   }
 
   public static void writeFile(String filePath, List<String> data) {
