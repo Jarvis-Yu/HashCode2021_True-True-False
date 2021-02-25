@@ -4,7 +4,7 @@ import dataClasses.in.Car;
 import dataClasses.in.InStructure;
 import dataClasses.in.Street;
 import dataClasses.in.Intersection;
-import javax.swing.filechooser.FileSystemView;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -89,7 +89,7 @@ public class Parser {
       var line = raw.get(i).split(" ");
       var stNoForCar = Integer.parseInt(line[0]);
       var startStreetName = line[1];
-      ins.streetMap.get(startStreetName).addCar(new Car(Arrays.copyOfRange(line, 1, line.length), stNoForCar, ins));
+      ins.streetMap.get(startStreetName).addCarToEnd(new Car(Arrays.copyOfRange(line, 1, line.length), stNoForCar, ins));
     }
 
     return ins;
