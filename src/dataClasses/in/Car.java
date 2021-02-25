@@ -1,5 +1,6 @@
 package dataClasses.in;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Car {
@@ -28,4 +29,12 @@ public class Car {
     }
   }
 
+  @Override
+  public String toString() {
+    return "Car{" +
+        "streets=" + Arrays.toString(streets) +
+        ", index=" + index +
+        ", pathLength=" + pathLength +
+        '}';
+  }
 }
