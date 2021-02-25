@@ -2,6 +2,7 @@ package io;
 
 import dataClasses.in.InStructure;
 
+import javax.swing.filechooser.FileSystemView;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +14,12 @@ public class Parser {
   public static InStructure getC(){return null;}
   public static InStructure getD(){return null;}
   public static InStructure getE(){return null;}
+
+  public static void main(String[] args) {
+    List<String> res = new ArrayList<>(List.of("abc", "def"));
+    var homeDir = FileSystemView.getFileSystemView().getHomeDirectory().getAbsolutePath();
+    writeFile(homeDir + "/Desktop/foo.txt", res);
+  }
 
   public static List<String> readFile(String filePath) {
     List<String> list = new ArrayList<>();
@@ -42,8 +49,7 @@ public class Parser {
   public static void writeFile(String filePath, List<String> data) {
     File file = new File(filePath);
     try {
-      file.createNewFile();
-      if (file.exists()) {
+      if (file.createNewFile() && file.exists()) {
         FileWriter fw = new FileWriter(file);
         data.forEach(
             line -> {
