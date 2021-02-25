@@ -6,9 +6,12 @@ import dataClasses.in.Street;
 import dataClasses.in.Intersection;
 
 import java.io.*;
+import java.lang.reflect.Array;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Queue;
 
 public class Parser {
 
@@ -89,7 +92,12 @@ public class Parser {
       var line = raw.get(i).split(" ");
       var stNoForCar = Integer.parseInt(line[0]);
       var startStreetName = line[1];
-      ins.streetMap.get(startStreetName).addCarToEnd(new Car(Arrays.copyOfRange(line, 1, line.length), stNoForCar, ins));
+      List<Street> queue = new ArrayList<>();
+      for (int j = 1; j < line.length; j++){
+        queue.add(ins.streetMap.get(line[j]));
+      }
+      Car newCar = new Car(queue, stNoForCar, ins);
+      ins.streetMap.get(startStreetName).addCarToEnd(newCar);
     }
 
     return ins;
