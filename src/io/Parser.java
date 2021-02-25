@@ -1,7 +1,7 @@
 package io;
 
 import dataClasses.in.InStructure;
-import dataClasses.in.TrafficLight;
+import dataClasses.in.Intersection;
 
 import javax.swing.filechooser.FileSystemView;
 import java.io.*;
@@ -50,12 +50,12 @@ public class Parser {
     var stNo = Integer.valueOf(fstLine[2]);
     var carNo =  Integer.valueOf(fstLine[3]);
     var bonus = Integer.valueOf(fstLine[4]);
-    TrafficLight[] trafficLights = new TrafficLight[interNo];
+    Intersection[] intersections = new Intersection[interNo];
 
     for (int i = 1; i < raw.size(); i++) {
       var line = raw.get(i).split(" ");
-      var inter1 = trafficLights[Integer.parseInt(line[0])];
-      var inter2 = trafficLights[Integer.parseInt(line[1])];
+      var inter1 = intersections[Integer.parseInt(line[0])];
+      var inter2 = intersections[Integer.parseInt(line[1])];
       var street = line[2];
       var weight = Integer.parseInt(line[3]);
       inter1.streets.add(street);
