@@ -20,5 +20,16 @@ public class InStructure {
     intersections.add(intersection);
   };
 
-  public String toString() { return null };
+  public String toString() {
+    StringBuilder s = new StringBuilder();
+    s.append(String.format("%n%nIntersections: %n"));
+    for (Intersection intersection : intersections) {
+      s.append(intersection);
+    }
+    s.append(String.format("%n%nStreets: %n"));
+    for (Street street : streetMap.values()) {
+      s.append(street);
+    }
+    return s.toString();
+  }
 }
