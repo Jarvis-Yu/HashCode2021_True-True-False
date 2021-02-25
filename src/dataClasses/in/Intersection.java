@@ -38,7 +38,7 @@ public class Intersection {
 		int i = 0;
 		while (true) {
 			mod = mod - durations.get(i);
-			if (mod < 0) {
+			if (mod <= 0) {
 				break;
 			}
 			i++;
