@@ -27,7 +27,12 @@ public class Street {
   }
 
   // 模拟
-  public void simulate(int currentTime) {}
+  public void simulate(int currentTime) {
+    while (!drivingCar.isEmpty() && drivingCar.peek().second + drivingTime >= currentTime) {
+      Pair<Car, Integer> pair = drivingCar.poll();
+      queueCars.add(pair.first);
+    }
+  }
 
   // 把传进来的车放到终点（先进先出）
   public void addCarToEnd(Car car) {
@@ -41,6 +46,7 @@ public class Street {
 
   // 将第一个正在路口等的车开出去
   public void nextCarLeave(int currentTime) {
+
     if (!queueCars.isEmpty()) {
       Car car = queueCars.poll();
       car.moveToNextStreet(currentTime);
