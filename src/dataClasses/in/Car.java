@@ -20,14 +20,15 @@ public class Car {
   }
 
   public int remainingLength() {
-    return  pathLength - index;
+    return pathLength - index;
   }
 
-  public void moveToNextStreet (int currentTime){
+  public void moveToNextStreet(int currentTime) {
     currentAndRemainingStreets.poll();
-    if (currentAndRemainingStreets.isEmpty()) {
-      inStructure.point += inStructure.bonusPointPerCar  + (inStructure.simulationLength - currentTime);
-    } else {
+    if (currentAndRemainingStreets.isEmpty()) { // 如果true, 加分
+      inStructure.point +=
+          inStructure.bonusPointPerCar + (inStructure.simulationLength - currentTime);
+    } else { // 把车放到下一个street
       Street nextStreet = currentAndRemainingStreets.peek();
       nextStreet.addCarToStart(this, currentTime);
     }
@@ -35,10 +36,13 @@ public class Car {
 
   @Override
   public String toString() {
-    return "Car{" +
-        "streets=" + currentAndRemainingStreets +
-        ", index=" + index +
-        ", pathLength=" + pathLength +
-        '}';
+    return "Car{"
+        + "streets="
+        + currentAndRemainingStreets
+        + ", index="
+        + index
+        + ", pathLength="
+        + pathLength
+        + '}';
   }
 }
