@@ -12,6 +12,11 @@ public class InStructure {
 
   public InStructure() {}
 
+  // constants in the simulation
+
+  public int simulationLength; // # of seconds
+  public int bonusPointPerCar; // # of points for each car reaching the goal
+
   public void addStreet(Street street) {
     streetMap.put(street.getStreetName(), street);
   };
