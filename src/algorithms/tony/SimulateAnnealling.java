@@ -11,30 +11,33 @@ public class SimulateAnnealling {
     return (int) x;
   }
 
+  private static int objectiveFunction(InStructure structure){
+    return 0;
+  }
+
   public static List<Intersection> algo(InStructure structure){
     double T = 100;
     double T_min = 10;
     double r = 0.9999;
-    List<Intersection> current;
+    List<Intersection> current = structure.getIntersectionsSafe();
     List<Intersection> next;
     int dE;
     int count = 0;
 
     while(T > T_min){
-      current = structure.getIntersectionsSafe();
-
       int currentScore = objectiveFunction(structure);
       next = update(current);
       structure.setIntersections(next);
-      int nextScore = objectiveFuntion(structure);
+      int nextScore = objectiveFunction(structure);
 
       dE = nextScore - currentScore;
-
       if (dE >= 0){
         current = next;
-      }else if (Math.exp(dE / T) > Math.random() ){
+      }else if (Math.exp(dE / T) > Math.random()) {
         current = next;
       }
+
+      structure.setIntersections(current);
       T = r * T;
       count += 1;
       if (count % 230 == 0){
